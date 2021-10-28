@@ -1,0 +1,4 @@
+sleep $(( $(date -f - +%s- <<< "tomorrow 00:01"$'\nnow') 0 ))
+branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+git push origin $branch
+echo deployed
